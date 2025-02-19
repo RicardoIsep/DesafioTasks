@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { fetchTasks, addTask, toggleTask, deleteTask } from './TaskService.js';
+import { logoutUser } from '../auth/AuthService.js';
+import { useNavigate } from 'react-router-dom';  // Import useNavigate
 
-function TaskComponent() {
+function TaskComponent({ onLogout }) {
     const [title, setTitle] = useState('');
     const queryClient = useQueryClient();
+    const navigate = useNavigate();
 
     // Buscar tarefas
     const { data: tasks = [], isLoading, error } = useQuery({
@@ -45,6 +48,16 @@ function TaskComponent() {
 
     return (
         <div className="max-w-md w-full bg-white shadow-md rounded p-4">
+            <button
+                onClick={() => {
+                    logoutUser();
+                    onLogout();
+                    navigate('/');
+                }}
+                className="text-red-500 mb-4"
+            >
+                Sair
+            </button>
             <input
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
