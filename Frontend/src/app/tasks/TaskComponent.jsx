@@ -54,7 +54,7 @@ function TaskComponent({ onLogout }) {
                     onLogout();
                     navigate('/');
                 }}
-                className="text-red-500 mb-4"
+                className="text-red-500 mb-4 ml-auto block"
             >
                 Sair
             </button>
