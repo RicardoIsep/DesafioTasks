@@ -1,8 +1,8 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import taskRoutes from './routes/taskRoutes.js';
-import authRoutes from './routes/authRoutes.js';
+import taskRoutes from './routes/TaskRoutes.js';
+import authRoutes from './routes/AuthRoutes.js';
 
 const app = express();
 app.use(express.json());
