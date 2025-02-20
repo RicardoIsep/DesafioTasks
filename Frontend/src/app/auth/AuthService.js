@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = '${process.env.VITE_API_URL}/auth';
+const API_URL = `${process.env.VITE_API_URL}/auth`;
 
 export const registerUser = async ({ username, password }) => {
     return await axios.post(`${API_URL}/register`, { username, password });
