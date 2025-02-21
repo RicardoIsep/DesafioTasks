@@ -31,7 +31,7 @@ project-root/
 - React Router
 - Tailwind CSS
 
-## Configuração e Execução
+## Configuração e Execução (Local)
 
 ### 1. Backend
 
@@ -74,16 +74,16 @@ O frontend irá correr em `http://localhost:5173/` (porta padrão do Vite).
 ## Deploy
 
 ### Backend (Render)
+1. Faça deploy conectando ao repositório GitHub.
+2. Configure a URL da base de dados MongoDB Atlas.
+3. Adicione as variáveis de ambiente `MONGO_URI`, `JWT_KEY` e `PORT` no Render.
 
-1. Configure a URL da base de dados MongoDB Atlas.
-2. Adicione as variáveis de ambiente `MONGO_URI`, `JWT_KEY` e `PORT` no Render.
-3. Faça deploy conectando ao repositório GitHub.
 
 ### Frontend (Netlify)
+1. Faça deploy conectando ao repositório GitHub.
+2. Configure a variável `VITE_API_URL` para apontar para o backend no Render.
+3. Configure o Netlify para correr `npm run build` e servir a pasta `dist/`.
 
-1. Configure a variável `VITE_API_URL` para apontar para o backend no Render.
-2. Configure o Netlify para correr `npm run build` e servir a pasta `dist/`.
-3. Faça deploy conectando ao repositório GitHub.
 
 ## Endpoints
 
